@@ -1,0 +1,84 @@
+<!doctype html>
+<title>Friction Duel</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+<button id="hamburger" aria-label="menu">☰</button>
+<h1>Friction Duel</h1>
+<div id="roomArea">
+<input id="roomInput" placeholder="ROOM ID" />
+<button id="joinBtn">参加</button>
+<button id="createBtn">作成</button>
+</div>
+</header>
+
+
+<nav id="sideMenu" class="hidden">
+<ul>
+<li data-nav="home">ホーム</li>
+<li data-nav="deck">カード編成</li>
+<li data-nav="gacha">ガチャ</li>
+<li data-nav="shop">ショップ</li>
+<li data-nav="gift">プレゼント</li>
+<li data-nav="options">オプション</li>
+<li data-nav="help">ヘルプ</li>
+</ul>
+</nav>
+
+
+<main id="app">
+<section id="homeView" class="view">
+<div class="homeTop">
+<div class="banner">宇宙×摩擦のカードバトルへようこそ</div>
+<div class="quickActions">
+<button id="quickPlay">対戦開始</button>
+<button id="openDeck">デッキ編成</button>
+</div>
+</div>
+<div id="newsArea"></div>
+</section>
+
+
+<section id="deckView" class="view hidden">
+<h2>カード編成</h2>
+<div id="collectionArea"></div>
+<div id="deckArea">
+<h3>デッキ（最大40）</h3>
+<div id="deckSlots"></div>
+<button id="saveDeck">デッキ保存</button>
+</div>
+</section>
+
+
+<section id="gachaView" class="view hidden">
+<h2>ガチャ</h2>
+<div id="gachaControls">
+<div>摩擦クリスタル: <span id="crystals">0</span></div>
+<button id="pullGacha">ガチャを引く</button>
+</div>
+<div id="gachaResult"></div>
+</section>
+
+
+<section id="battleView" class="view hidden">
+<h2>対戦ルーム</h2>
+<div id="battleInfo"></div>
+<div id="playerArea"></div>
+<div id="opponentArea"></div>
+<button id="readyBtn">準備OK</button>
+</section>
+
+
+</main>
+
+
+<script type="module" src="main.js"></script>
+<script>
+if('serviceWorker' in navigator){
+navigator.serviceWorker.register('/service-worker.js').catch(e=>console.log('SW登録失敗',e));
+}
+</script>
+</body>
+</html>
