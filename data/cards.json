@@ -1,0 +1,5 @@
+[
+{ "id":"LEG001","name":"星間摩擦王","series":"伝説","subtype":"伝説","rarity":"ミシック","friction":1200,"attack":300,"defense":200,"art":"/assets/cards/LEG001.png","flavor":"宇宙の摩擦を操る古の存在","rarity_rank":4 },
+{ "id":"FR001","name":"滑る流星","series":"摩擦","subtype":"摩擦","rarity":"レア","friction":220,"attack":80,"defense":40,"art":"/assets/cards/FR001.png","flavor":"小さな流星が滑るように軌道を変える","rarity_rank":1 },
+{ "id":"ATK001","name":"摩擦ブレード","series":"攻撃","subtype":"攻撃","rarity":"ノーマル","friction":120,"attack":120,"defense":0,"art":"/assets/cards/ATK001.png","flavor":"摩擦を刃に変える近接兵器","rarity_rank":0 }
+]
