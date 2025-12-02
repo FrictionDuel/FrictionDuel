@@ -1,8 +1,13 @@
 <!doctype html>
-<button id="createBtn">作成</button>
-</div>
-</header>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>Friction Duel</title>
+    <link rel="manifest" href="/FrictionDuel/manifest.json" />
+</head>
+<body>
 
+<button id="createBtn">作成</button>
 
 <nav id="sideMenu" class="hidden">
 <ul>
@@ -16,7 +21,6 @@
 </ul>
 </nav>
 
-
 <main id="app">
 <section id="homeView" class="view">
 <div class="homeTop">
@@ -29,7 +33,6 @@
 <div id="newsArea"></div>
 </section>
 
-
 <section id="deckView" class="view hidden">
 <h2>カード編成</h2>
 <div id="collectionArea"></div>
@@ -40,7 +43,6 @@
 </div>
 </section>
 
-
 <section id="gachaView" class="view hidden">
 <h2>ガチャ</h2>
 <div id="gachaControls">
@@ -50,7 +52,6 @@
 <div id="gachaResult"></div>
 </section>
 
-
 <section id="battleView" class="view hidden">
 <h2>対戦ルーム</h2>
 <div id="battleInfo"></div>
@@ -58,16 +59,18 @@
 <div id="opponentArea"></div>
 <button id="readyBtn">準備OK</button>
 </section>
-
-
 </main>
 
+<!-- main.js のパス修正 -->
+<script type="module" src="/FrictionDuel/main.js"></script>
 
-<script type="module" src="main.js"></script>
+<!-- Service Worker のパスも修正 -->
 <script>
 if('serviceWorker' in navigator){
-navigator.serviceWorker.register('/service-worker.js').catch(e=>console.log('SW登録失敗',e));
+    navigator.serviceWorker.register('/FrictionDuel/service-worker.js')
+      .catch(e => console.log('SW登録失敗', e));
 }
 </script>
+
 </body>
 </html>
