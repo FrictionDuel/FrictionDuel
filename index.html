@@ -7,7 +7,9 @@
 </head>
 <body>
 
-<button id="createBtn">作成</button>
+<header>
+    <button id="createBtn">作成</button>
+</header>
 
 <nav id="sideMenu" class="hidden">
 <ul>
@@ -22,6 +24,7 @@
 </nav>
 
 <main id="app">
+
 <section id="homeView" class="view">
 <div class="homeTop">
 <div class="banner">宇宙×摩擦のカードバトルへようこそ</div>
@@ -59,16 +62,15 @@
 <div id="opponentArea"></div>
 <button id="readyBtn">準備OK</button>
 </section>
+
 </main>
 
-<!-- main.js のパス修正 -->
 <script type="module" src="/FrictionDuel/main.js"></script>
 
-<!-- Service Worker のパスも修正 -->
 <script>
-if('serviceWorker' in navigator){
+if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/FrictionDuel/service-worker.js')
-      .catch(e => console.log('SW登録失敗', e));
+        .catch(e => console.log('SW登録失敗', e));
 }
 </script>
 
